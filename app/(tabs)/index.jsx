@@ -9,35 +9,43 @@ import {
   Image,
 } from "react-native"
 import Ionicons from "@expo/vector-icons/Ionicons"
+import { Link } from "expo-router"
 
 const categoriesData = [
   {
     id: 1,
     src: require("../../assets/images/cap.png"),
+    title: "Accesorios",
   },
   {
     id: 2,
     src: require("../../assets/images/pyjamas.png"),
+    title: "Remeras",
   },
   {
     id: 3,
     src: require("../../assets/images/skirt.png"),
+    title: "Polleras",
   },
   {
     id: 4,
     src: require("../../assets/images/pullover.png"),
+    title: "Pullovers",
   },
   {
     id: 5,
     src: require("../../assets/images/blazer.png"),
+    title: "Blazers",
   },
   {
     id: 6,
     src: require("../../assets/images/bustier.png"),
+    title: "Vestidos",
   },
   {
     id: 7,
     src: require("../../assets/images/trunks.png"),
+    title: "Pantalones",
   },
 ]
 
@@ -102,7 +110,8 @@ const HomeScreen = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
-              <Pressable
+              <Link
+                href={{ pathname: `/category/${item.id}`, params: item }}
                 style={{
                   margin: 2,
                   justifyContent: "center",
@@ -111,6 +120,7 @@ const HomeScreen = () => {
                   backgroundColor: "#7D4F50",
                   width: 70,
                   height: 80,
+                  textAlign: "center",
                 }}
               >
                 <Image
@@ -121,7 +131,7 @@ const HomeScreen = () => {
                     objectFit: "cover",
                   }}
                 />
-              </Pressable>
+              </Link>
             )}
           />
         </View>
@@ -143,31 +153,37 @@ const HomeScreen = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
-              <View
-                style={{
-                  margin: 4,
-                  justifyContent: "center",
-                }}
+              <Link
+                href={{ pathname: `/product/${item.id}`, params: item }}
+                style={{ marginEnd: 20 }}
               >
-                <Image
-                  source={item.src}
+                <View
                   style={{
-                    width: 160,
-                    height: 160,
-                    objectFit: "cover",
-                    borderRadius: 10,
-                  }}
-                />
-                <Text
-                  style={{
-                    color: "#7D4F50",
-                    fontSize: 12,
-                    marginTop: 20,
+                    margin: 4,
+                    justifyContent: "center",
+                    flexDirection: "column",
                   }}
                 >
-                  {item.title}
-                </Text>
-              </View>
+                  <Image
+                    source={item.src}
+                    style={{
+                      width: 160,
+                      height: 160,
+                      objectFit: "cover",
+                      borderRadius: 10,
+                    }}
+                  />
+                  <Text
+                    style={{
+                      color: "#7D4F50",
+                      fontSize: 12,
+                      marginTop: 20,
+                    }}
+                  >
+                    {item.title}
+                  </Text>
+                </View>
+              </Link>
             )}
           />
           <View style={{ marginVertical: 15 }}></View>
@@ -177,31 +193,37 @@ const HomeScreen = () => {
             horizontal
             showsHorizontalScrollIndicator={false}
             renderItem={({ item }) => (
-              <View
-                style={{
-                  margin: 4,
-                  justifyContent: "center",
-                }}
+              <Link
+                href={{ pathname: `/product/${item.id}`, params: item }}
+                style={{ marginEnd: 20 }}
               >
-                <Image
-                  source={item.src}
+                <View
                   style={{
-                    width: 160,
-                    height: 160,
-                    objectFit: "cover",
-                    borderRadius: 10,
-                  }}
-                />
-                <Text
-                  style={{
-                    color: "#7D4F50",
-                    fontSize: 12,
-                    marginTop: 20,
+                    margin: 4,
+                    justifyContent: "center",
+                    flexDirection: "column",
                   }}
                 >
-                  {item.title}
-                </Text>
-              </View>
+                  <Image
+                    source={item.src}
+                    style={{
+                      width: 160,
+                      height: 160,
+                      objectFit: "cover",
+                      borderRadius: 10,
+                    }}
+                  />
+                  <Text
+                    style={{
+                      color: "#7D4F50",
+                      fontSize: 12,
+                      marginTop: 20,
+                    }}
+                  >
+                    {item.title}
+                  </Text>
+                </View>
+              </Link>
             )}
           />
         </View>

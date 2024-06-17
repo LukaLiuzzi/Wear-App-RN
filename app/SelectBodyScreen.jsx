@@ -4,19 +4,19 @@ import { FlatList, Image, Pressable, Text, View } from "react-native"
 const data = [
   {
     id: 1,
-    src: require("../../assets/images/1.png"),
+    src: require("../assets/images/1.png"),
   },
   {
     id: 2,
-    src: require("../../assets/images/2.png"),
+    src: require("../assets/images/2.png"),
   },
   {
     id: 3,
-    src: require("../../assets/images/3.png"),
+    src: require("../assets/images/3.png"),
   },
   {
     id: 4,
-    src: require("../../assets/images/4.png"),
+    src: require("../assets/images/4.png"),
   },
 ]
 

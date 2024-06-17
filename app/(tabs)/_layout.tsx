@@ -25,7 +25,6 @@ export default function TabLayout() {
             color: "#FBEBE1",
             fontSize: 50,
             fontWeight: "bold",
-            marginTop: 10,
           },
           headerTitle: "Wear",
           headerShown: true,
@@ -39,12 +38,24 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="Detail"
+        name="information"
         options={{
-          title: "Body",
+          title: "Information",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "body" : "body-outline"}
+              name={focused ? "information" : "information-outline"}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "accessibility" : "accessibility-outline"}
               color={color}
             />
           ),
